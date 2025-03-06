@@ -1,3 +1,11 @@
 name: Player_Manager
 version: '${project.version}'
 main: org.gomadango0113.player_manager.Main
+
+commands:
+  normal_ban:
+    description: BANするコマンド
+    permission: player_manager.command.normal_ban
+  temp_ban:
+    description: 期限BANするコマンド
+    permission: player_manager.command.temp_ban

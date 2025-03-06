@@ -6,12 +6,22 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        registerCommand();
 
+        getLogger().info("[PlayerManager] プラグインの準備ができました。");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
     }
+
+    public void registerCommand() {
+
+    }
+
+    public static Main getInstance() {
+        return getPlugin(Main.class);
+    }
+
 }
