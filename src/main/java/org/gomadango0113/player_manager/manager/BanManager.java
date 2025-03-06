@@ -25,6 +25,10 @@ public class BanManager {
         name_list.addBan(player.getName(), reason, null, null);
     }
 
+    public static void tempBan(OfflinePlayer player, String reason, Date date) {
+        name_list.addBan(player.getName(), reason, date, null);
+    }
+
     public static void tempBan(OfflinePlayer player, String reason, LocalDateTime localDateTime) {
         Instant instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();
         Date date = Date.from(instant);
