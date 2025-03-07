@@ -9,3 +9,6 @@ commands:
   temp_ban:
     description: 期限BANするコマンド
     permission: player_manager.command.temp_ban
+  player_info:
+    description: プライヤーに関するコマンド
+    permission: player_manager.command.player_info
