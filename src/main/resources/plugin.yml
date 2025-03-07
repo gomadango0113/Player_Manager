@@ -9,6 +9,12 @@ commands:
   temp_ban:
     description: 期限BANするコマンド
     permission: player_manager.command.temp_ban
+  normal_mute:
+    description: ミュートするコマンド
+    permission: player_manager.command.normal_mute
+  temp_mute:
+    description: 期限ミュートするコマンド
+    permission: player_manager.command.temp_mute
   player_info:
     description: プライヤーに関するコマンド
     permission: player_manager.command.player_info
