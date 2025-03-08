@@ -17,6 +17,12 @@ public class PlayerChatListener implements Listener {
         MuteManager.MutePlayer mute_player = MuteManager.getMutePlayer(player);
 
         if (mute_player != null) {
+            if (mute_player.getType() == MuteManager.MuteType.TEMP) {
+                if (System.currentTimeMillis() >= mute_player.getUnBanDate().getTime()) {
+                    MuteManager.removeMute(player);
+                }
+            }
+
             player.sendMessage("あなたはミュートされています。");
             event.setCancelled(true);
         }

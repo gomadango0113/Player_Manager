@@ -38,6 +38,30 @@ public class MuteManager {
             writeFile(gson.toJson(raw_json));
         }
     }
+
+    public static void addTempMute(OfflinePlayer player, String reason, LocalDateTime localDateTime) throws IOException {
+        JsonObject raw_json = getRawJson();
+        if (!raw_json.has(player.getName())) {
+            JsonObject player_obj = new JsonObject();
+            player_obj.addProperty("UUID", player.getUniqueId().toString());
+            player_obj.addProperty("reason", reason);
+            player_obj.addProperty("TYPE", "TEMP");
+            player_obj.addProperty("unmute-time", TimeUtil.localToDate(localDateTime).getTime());
+
+            raw_json.add(player.getName(), player_obj);
+
+            writeFile(gson.toJson(raw_json));
+        }
+    }
+
+    public static void removeMute(OfflinePlayer player) throws IOException {
+        JsonObject raw_json = getRawJson();
+        if (raw_json.has(player.getName())) {
+            raw_json.remove(player.getName());
+
+            writeFile(gson.toJson(raw_json));
+        }
+    }
     
     public static MutePlayer getMutePlayer(OfflinePlayer player) throws IOException {
         JsonObject raw_json = getRawJson();
