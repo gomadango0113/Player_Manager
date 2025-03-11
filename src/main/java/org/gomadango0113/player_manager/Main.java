@@ -5,7 +5,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.gomadango0113.player_manager.commands.BanCommand;
 import org.gomadango0113.player_manager.commands.MuteCommand;
 import org.gomadango0113.player_manager.commands.PlayerInfoCommand;
+import org.gomadango0113.player_manager.commands.ReportCommand;
 import org.gomadango0113.player_manager.listener.PlayerChatListener;
+import org.gomadango0113.player_manager.listener.PlayerJoinListener;
 
 public final class Main extends JavaPlugin {
 
@@ -27,6 +29,7 @@ public final class Main extends JavaPlugin {
         getCommand("temp_ban").setExecutor(new BanCommand());
         getCommand("normal_mute").setExecutor(new MuteCommand());
         getCommand("temp_mute").setExecutor(new MuteCommand());
+        getCommand("warn_player").setExecutor(new ReportCommand());
         getCommand("player_info").setExecutor(new PlayerInfoCommand());
     }
 
@@ -34,6 +37,7 @@ public final class Main extends JavaPlugin {
         PluginManager plm = getServer().getPluginManager();
 
         plm.registerEvents(new PlayerChatListener(), this);
+        plm.registerEvents(new PlayerJoinListener(), this);
     }
 
     public static Main getInstance() {

@@ -15,6 +15,9 @@ commands:
   temp_mute:
     description: 期限ミュートするコマンド
     permission: player_manager.command.temp_mute
+  warn_player:
+    description: プレイヤーを警告するコマンド
+    permission: player_manager.command.warn_player
   player_info:
     description: プライヤーに関するコマンド
     permission: player_manager.command.player_info
