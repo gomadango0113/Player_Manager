@@ -7,6 +7,7 @@ import org.gomadango0113.player_manager.commands.MuteCommand;
 import org.gomadango0113.player_manager.commands.PlayerInfoCommand;
 import org.gomadango0113.player_manager.commands.ReportCommand;
 import org.gomadango0113.player_manager.listener.PlayerChatListener;
+import org.gomadango0113.player_manager.listener.PlayerCommandListener;
 import org.gomadango0113.player_manager.listener.PlayerJoinListener;
 
 public final class Main extends JavaPlugin {
@@ -38,6 +39,7 @@ public final class Main extends JavaPlugin {
 
         plm.registerEvents(new PlayerChatListener(), this);
         plm.registerEvents(new PlayerJoinListener(), this);
+        plm.registerEvents(new PlayerCommandListener(), this);
     }
 
     public static Main getInstance() {
